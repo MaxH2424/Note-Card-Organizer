@@ -18,10 +18,11 @@ namespace NCOrganizer
     /// <summary>
     /// Interaction logic for Forms.xaml
     /// </summary>
+    
     public partial class Forms : Window
     {
         Notecard newCard = new Notecard();
-        string path = @"C:\Users\Max Hendricks\Documents\";
+        string path = @"C:\Users\Max Hendricks\Documents\NotecardNotes\";
 
         public Forms()
         {
@@ -48,10 +49,6 @@ namespace NCOrganizer
             notepadScreen screen = new notepadScreen();
             screen.Show();
             this.Close();
-            Button newButton = new Button();
-            newButton.Content = newCard.getTitle();
-            newButton.Click += Direct_Path;
-            screen.Grid1.Children.Add(newButton);
         }
 
         private void Direct_Path(object sender, RoutedEventArgs e)

@@ -8,7 +8,7 @@
         Title="Note Card Organizer - Max Hendricks" Height="450" Width="800">
     <Grid Background="LightSlateGray">
         <Button Content="Show Notecards" FontSize ="16" HorizontalAlignment="Center" Height="89"  VerticalAlignment="Center" Width="123" Background="White" RenderTransformOrigin="0.504,0.537" Click="Button_Click"/>
-        
+       
     </Grid>
 
 

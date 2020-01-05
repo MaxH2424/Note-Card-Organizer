@@ -9,18 +9,52 @@
     <Grid Background="LightSlateGray">
         <Button Content="Home" FontSize="20" Background="White" HorizontalAlignment="Left" Height="55"  VerticalAlignment="Bottom" Width="114" Click="Home_Click"/>
         <Button Content="Add Card" FontSize="20" Background="White" HorizontalAlignment="Right" Height="55"  VerticalAlignment="Bottom" Width="110" Click="Add_Card" Margin="0,0,-0.4,0"/>
-        <Grid HorizontalAlignment="Left" Height="294" Margin="68,33,0,0" VerticalAlignment="Top" Name="Grid1" Width="660">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
-            
-        </Grid>
+        <StackPanel HorizontalAlignment="Left" Height="300" Margin="66,33,0,0" VerticalAlignment="Top" Name="StackPack1" Width="148">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Height" Value="80"/>
+                    <Setter Property="Background" Value="Navy"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Width" Value="100"/>
+                    <Setter Property="Margin" Value="0,10,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Left" Height="300" Margin="252,33,0,0" VerticalAlignment="Top" Name="StackPack2" Width="148">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Height" Value="80"/>
+                    <Setter Property="Background" Value="Navy"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Width" Value="100"/>
+                    <Setter Property="Margin" Value="0,10,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Left" Height="300" Margin="430,33,0,0" VerticalAlignment="Top" Name="StackPack3" Width="148">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Height" Value="80"/>
+                    <Setter Property="Background" Value="Navy"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Width" Value="100"/>
+                    <Setter Property="Margin" Value="0,10,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Left" Height="300" Margin="602,33,0,0" VerticalAlignment="Top" Name="StackPack4" Width="148">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Height" Value="80"/>
+                    <Setter Property="Background" Value="Navy"/>
+                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Width" Value="100"/>
+                    <Setter Property="Margin" Value="0,10,0,0"/>
+                </Style>
+            </StackPanel.Resources>
+        </StackPanel>
     </Grid>
 </Window>
