@@ -23,59 +23,57 @@ namespace NCOrganizer
         static string path = @"C:\Users\Max Hendricks\Documents\NotecardNotes\";
         string name = "";
         string[] files = Directory.GetFiles(path);
-        int i = 0;
+        static int itr = 0;
+        List<Button> listOfButtons = new List<Button>();
 
         public notepadScreen()
         {
             InitializeComponent();
             
-            int buttonCount = 0;
-            foreach (string file in files)
+            for (int i = 0; i < files.Length; i++)
             {
-                Button newButtons = new Button();
-                name = files[buttonCount];
-                string filename = buttonCount.ToString();
-                newButtons.Click += Direct_Path;
-                newButtons.Content = Path.GetFileName(file);
-                if (buttonCount < 3)
+                listOfButtons.Add(new Button());
+            }
+
+            for (int i = 0; i < files.Length; i++)
+            {
+                Button newButton = new Button();
+                name = files[i];
+                newButton.Click += Direct_Path;
+                newButton.Content = Path.GetFileName(files[i]);
+               
+                listOfButtons.ElementAt(i).Click += Direct_Path;
+                listOfButtons.ElementAt(i).Content = Path.GetFileName(files[i]);
+            }
+
+            for (int i = 0; i < listOfButtons.Count; i++)
+            {
+                if (i < 3)
                 {
-                    this.StackPack1.Children.Add(newButtons);
+                    this.StackPack1.Children.Add(listOfButtons.ElementAt(i));
                 }
-                else if (buttonCount >= 3 && buttonCount < 6)
+                else if (i >= 3 && i < 6)
                 {
-                    this.StackPack2.Children.Add(newButtons);
+                    this.StackPack2.Children.Add(listOfButtons.ElementAt(i));
                 }
-                else if (buttonCount >= 6 && buttonCount < 9)
+                else if (i >= 6 && i < 9)
                 {
-                    this.StackPack3.Children.Add(newButtons);
+                    this.StackPack3.Children.Add(listOfButtons.ElementAt(i));
                 }
-                else if (buttonCount >= 9 && buttonCount < 12)
+                else if (i >= 9 && i < 12)
                 {
-                    this.StackPack4.Children.Add(newButtons);
+                    this.StackPack4.Children.Add(listOfButtons.ElementAt(i));
                 }
                 else
                 {
                     MessageBox.Show("You're at your max limit of notecards");
                 }
-                buttonCount++;
-            }
 
-            
-            foreach (var button in StackPack1.Children.OfType<Button>())
-            {
-                button.Click += Button_Click;
-                i++;
             }
+            
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(files[i]);
-            string filePath = files[i];
-            
-            System.Diagnostics.Process.Start(filePath);
-        }
-
+        
         private void Home_Click(object sender, RoutedEventArgs e)
         {
             // Shows the next window
@@ -93,7 +91,15 @@ namespace NCOrganizer
 
         private void Direct_Path(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.Process.Start(name);
+            string content = (sender as Button).Content.ToString(); // Figures out button clicked.
+
+            for (int i = 0; i < listOfButtons.Count; i++)
+            {
+                if (listOfButtons.ElementAt(i).Content.ToString() == content)
+                {
+                    Process.Start(files[i]); // starts files at location where i was found.
+                }
+            }
         }
 
     }
