@@ -23,13 +23,12 @@ namespace NCOrganizer
         static string path = @"C:\Users\Max Hendricks\Documents\NotecardNotes\";
         string name = "";
         string[] files = Directory.GetFiles(path);
-        static int itr = 0;
         List<Button> listOfButtons = new List<Button>();
 
         public notepadScreen()
         {
             InitializeComponent();
-            
+
             for (int i = 0; i < files.Length; i++)
             {
                 listOfButtons.Add(new Button());
@@ -101,6 +100,7 @@ namespace NCOrganizer
                 }
             }
         }
+
 
     }
 }
