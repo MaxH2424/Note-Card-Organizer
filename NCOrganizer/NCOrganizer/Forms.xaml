@@ -11,9 +11,11 @@
         <TextBlock HorizontalAlignment="Left" Height="19" Margin="121,74,0,0" TextWrapping="Wrap" Text="Date" VerticalAlignment="Top" Width="94"/>
         <TextBlock HorizontalAlignment="Left" Height="19" Margin="121,50,0,0" TextWrapping="Wrap" Text="Category" VerticalAlignment="Top" Width="94"/>
         <TextBox HorizontalAlignment="Left" Height="19" Margin="202,26,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Name="Box1" Width="287"/>
-        <TextBox HorizontalAlignment="Left" Height="19" Margin="202,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Name="Box3" Width="287"/>
         <TextBox HorizontalAlignment="Left" Height="19" Margin="202,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Name="Box2" Width="287"/>
         <Button Content="Create" Background="White" HorizontalAlignment="Left" Height="25" Margin="551,107,0,0" VerticalAlignment="Top" Width="107" Name="Create_Button"/>
-        
+        <Button Content="Back" Background="White" HorizontalAlignment="Left" Height="25" Margin="10,107,0,0" VerticalAlignment="Top" Width="107" Click="Go_Back"/>
+        <DatePicker SelectedDateFormat="Long" Name="DateBox" SelectedDate=""
+                  DisplayDateStart="1/1/09" DisplayDateEnd="12/31/2020" 
+                  FirstDayOfWeek="Monday" Margin="202,76,179,33"/>
     </Grid>
 </Window>

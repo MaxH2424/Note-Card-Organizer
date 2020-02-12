@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="Note Card Organizer - Max Hendricks" Height="450" Width="800">
     <Grid Background="LightSlateGray">
-        <Button Content="Home" FontSize="20" Background="White" HorizontalAlignment="Left" Height="55"  VerticalAlignment="Bottom" Width="114" Click="Home_Click"/>
-        <Button Content="Add Card" FontSize="20" Background="White" HorizontalAlignment="Right" Height="55"  VerticalAlignment="Bottom" Width="110" Click="Add_Card" Margin="0,0,-0.4,0"/>
+        <Button Content="Home" FontSize="20" Background="White" HorizontalAlignment="Left" Height="35"  VerticalAlignment="Bottom" Width="114" Click="Home_Click"/>
+        <Button Content="Add Card" FontSize="20" Background="White" HorizontalAlignment="Right" Height="35"  VerticalAlignment="Bottom" Width="110" Click="Add_Card" Margin="0,0,-0.4,0"/>
         <StackPanel HorizontalAlignment="Left" Height="300" Margin="66,33,0,0" VerticalAlignment="Top" Name="StackPack1" Width="148">
             <StackPanel.Resources>
                 <Style TargetType="{x:Type Button}">

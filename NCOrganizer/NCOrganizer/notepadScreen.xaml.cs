@@ -20,7 +20,7 @@ namespace NCOrganizer
     /// </summary>
     public partial class notepadScreen : Window
     {
-        static string path = @"C:\Users\Max Hendricks\Documents\NotecardNotes\";
+        private static string path = @"C:\Users\Max Hendricks\Documents\NotecardNotes\";
         string name = "";
         string[] files = Directory.GetFiles(path);
         List<Button> listOfButtons = new List<Button>();

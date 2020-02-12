@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.ComponentModel;
+using System.Diagnostics;
 
 namespace NCOrganizer
 {
@@ -21,14 +23,15 @@ namespace NCOrganizer
     
     public partial class Forms : Window
     {
-        Notecard newCard = new Notecard();
-        string path = @"C:\Users\Max Hendricks\Documents\NotecardNotes\";
+        private Notecard newCard = new Notecard();
+        private string path = @"C:\Users\Max Hendricks\Documents\NotecardNotes\";
 
         public Forms()
         {
             InitializeComponent();
-            Create_Button.Click += Save_File;
-            Create_Button.Click += Add_Button;
+            DateTime newDateTime = DateTime.Now; // Gets the date currently
+            this.DateBox.SelectedDate = newDateTime; // Initiates the box to newDateTime
+            Create_Button.Click += Check_Mate;
         }
 
         private void Save_File(object sender, RoutedEventArgs e)
@@ -36,15 +39,50 @@ namespace NCOrganizer
             
             newCard.setTitle(this.Box1.Text);
             newCard.setCategory(this.Box2.Text);
-            newCard.setDate(this.Box3.Text);
+            newCard.setDate(this.DateBox.Text);
 
-            FileStream newFile = File.Create(path + newCard.getTitle() + ".txt");
-            newFile.Close(); // Closing the file after creating it
+            try
+            {
+                if (File.Exists(path + newCard.getTitle() + ".txt")) // If the path starts, that means there is a path already with that title
+                {
+                    MessageBox.Show("There's already a file under this name. Please try again.");
+                }
+                else
+                {
+                    FileStream newFile = File.Create(path + newCard.getTitle() + ".txt");
+                    newFile.Close(); // Closing the file after creating it
+                    Process.Start(path + newCard.getTitle() + ".txt");
+                    Add_Button(sender, e);
+                }
+            }
+            catch (Win32Exception)
+            {
+                MessageBox.Show("Error, there was an issue with opening the file. Please try again.");
+            }
 
-            System.Diagnostics.Process.Start(path + newCard.getTitle() + ".txt");
+
         }
 
         private void Add_Button(object sender, RoutedEventArgs e)
+        {
+            notepadScreen screen = new notepadScreen();
+            screen.Show();
+            this.Close();
+        }
+
+        private void Check_Mate(object sender, RoutedEventArgs e)
+        {
+            if(this.Box1.Text == "" || this.Box2.Text == "" || this.DateBox.Text == "")
+            {
+                MessageBox.Show("Error, please fill out all fields");
+            }
+            else
+            {
+                Save_File(sender, e);
+            }
+        }
+
+        private void Go_Back(object sender, RoutedEventArgs e)
         {
             notepadScreen screen = new notepadScreen();
             screen.Show();
