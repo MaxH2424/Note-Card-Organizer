@@ -17,3 +17,5 @@ C:\Users\Max Hendricks\Note-Card-Organizer\NCOrganizer\NCOrganizer\obj\Debug\not
 C:\Users\Max Hendricks\Note-Card-Organizer\NCOrganizer\NCOrganizer\obj\Debug\notepadScreen.baml
 C:\Users\Max Hendricks\Note-Card-Organizer\NCOrganizer\NCOrganizer\obj\Debug\Forms.g.cs
 C:\Users\Max Hendricks\Note-Card-Organizer\NCOrganizer\NCOrganizer\obj\Debug\Forms.baml
+C:\Users\Max Hendricks\Note-Card-Organizer\NCOrganizer\NCOrganizer\obj\Debug\PathWindow.g.cs
+C:\Users\Max Hendricks\Note-Card-Organizer\NCOrganizer\NCOrganizer\obj\Debug\PathWindow.baml

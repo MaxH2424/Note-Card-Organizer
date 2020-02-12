@@ -78,11 +78,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PathWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Notecard.cs" />
     <Compile Include="notepadScreen.xaml.cs">
       <DependentUpon>notepadScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PathWindow.xaml.cs">
+      <DependentUpon>PathWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
